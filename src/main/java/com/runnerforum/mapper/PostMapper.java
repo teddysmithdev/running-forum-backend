@@ -1,28 +1,22 @@
 package com.runnerforum.mapper;
 
-import static com.runnerforum.model.VoteType.DOWNVOTE;
-import static com.runnerforum.model.VoteType.UPVOTE;
-
-import java.util.Optional;
-
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.github.marlonlom.utilities.timeago.TimeAgo;
 import com.runnerforum.dto.PostRequest;
 import com.runnerforum.dto.PostResponse;
-import com.runnerforum.model.Post;
-import com.runnerforum.model.Subreddit;
-import com.runnerforum.model.User;
-import com.runnerforum.model.Vote;
-import com.runnerforum.model.VoteType;
+import com.runnerforum.model.*;
 import com.runnerforum.repository.CommentRepository;
 import com.runnerforum.repository.VoteRepository;
 import com.runnerforum.service.AuthService;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@Component
+import java.util.Optional;
+
+import static com.runnerforum.model.VoteType.DOWNVOTE;
+import static com.runnerforum.model.VoteType.UPVOTE;
+
+
 @Mapper(componentModel = "spring")
 public abstract class PostMapper {
 
